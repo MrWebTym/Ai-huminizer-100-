@@ -1,2 +1,10 @@
-# Ai-huminizer-100-
-Best ai huminizer
+# AI Text Humanizer
+
+Простой веб-сайт для очистки текста от следов ИИ и паттернов генераторов (ChatGPT, Claude, Gemini).
+
+## Как выложить на GitHub Pages:
+1. Создай новый репозиторий на GitHub.
+2. Распакуй zip-архив и загрузи файлы (`index.html`, `style.css`, `script.js`) в свой репозиторий.
+3. Зайди в **Settings** -> **Pages**.
+4. В поле **Branch** выбери `main` (или `master`) и нажми **Save**.
+5. Через 1-2 минуты твой сайт будет доступен по ссылке для всех!
