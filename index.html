@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Humanizer Ultra — 100% Bypass ZeroGPT</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-glow"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo-tag"><i class="fa-solid fa-shield-cat"></i> ZeroGPT Undetectable Engine</div>
+            <h1>Humanizer <span>Pro Ultra</span></h1>
+            <p>Пакетная обработка текстов до 50 000 слов. Гарантированный обход детекции 0% AI.</p>
+        </header>
+
+        <main class="editor-grid">
+            <div class="card input-card">
+                <div class="card-header">
+                    <span><i class="fa-solid fa-file-lines"></i> Исходный текст / Огромный файл</span>
+                    <button id="clear-btn" class="btn-text"><i class="fa-solid fa-trash-can"></i> Очистить</button>
+                </div>
+
+                <div class="file-upload-zone" id="drop-zone">
+                    <input type="file" id="file-input" accept=".txt,.md,.doc,.docx" hidden>
+                    <div class="upload-inner">
+                        <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                        <span>Перетащите сюда файл или <strong id="upload-trigger">выберите на ПК</strong></span>
+                        <small>Поддержка больших документов (.txt, .md, .doc) до 50 000+ слов</small>
+                    </div>
+                    <div id="file-name" class="file-name-badge hidden"></div>
+                </div>
+
+                <textarea id="input-text" placeholder="Вставьте сюда любой текст (хоть 5 000 – 10 000 слов) или загрузите файл..."></textarea>
+                
+                <div class="card-footer">
+                    <span id="input-stats"><i class="fa-solid fa-font"></i> Слов: 0 | Символов: 0</span>
+                    <span class="limit-badge">Лимит: До 50 000 слов</span>
+                </div>
+            </div>
+
+            <div class="card output-card">
+                <div class="card-header">
+                    <span><i class="fa-solid fa-wand-magic-sparkles"></i> Результат (0% AI)</span>
+                    <button id="copy-btn" class="btn-text"><i class="fa-regular fa-copy"></i> Скопировать всё</button>
+                </div>
+                
+                <div id="output-area" class="output-area">
+                    <div id="placeholder-text" class="placeholder">
+                        <i class="fa-solid fa-robot-slash"></i>
+                        <p>Здесь появится полностью очеловеченный текст без следов ИИ</p>
+                    </div>
+                    <div id="processed-content" class="hidden"></div>
+                </div>
+
+                <div class="detection-bar">
+                    <div class="status-indicator">
+                        <i class="fa-solid fa-circle-check text-success"></i>
+                        <span id="status-label">ZeroGPT Проверка:</span>
+                        <span id="status-text">Ожидание текста</span>
+                    </div>
+                    <div class="ai-score-badge" id="score-badge">0% AI</div>
+                </div>
+
+                <div class="card-footer">
+                    <span id="output-stats"><i class="fa-solid fa-align-left"></i> Слов: 0 | Готово к сдаче</span>
+                </div>
+            </div>
+        </main>
+
+        <section class="controls">
+            <div class="mode-box">
+                <label for="mode-select"><i class="fa-solid fa-sliders"></i> Режим очистки:</label>
+                <select id="mode-select">
+                    <option value="deep" selected>Глубокий обход (Deep Bypass — 0% AI)</option>
+                    <option value="academic">Академический (Для эссе и рефератов)</option>
+                    <option value="casual">Разговорный стиль</option>
+                </select>
+            </div>
+            
+            <button id="humanize-btn" class="btn-primary">
+                <i class="fa-solid fa-bolt-lightning"></i> Очеловечить и Сделать 0% AI
+            </button>
+        </section>
+    </div>
+
+    <!-- Модальное окно загрузки и проверки -->
+    <div id="loader-overlay" class="loader-overlay hidden">
+        <div class="loader-card">
+            <div class="loader-ring"></div>
+            <h3 id="loader-title">Обработка 5000+ слов...</h3>
+            <p id="loader-desc">Разбивка на чанки, устранение AI-структуры и эмуляция ZeroGPT</p>
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <span id="progress-percent">0%</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
